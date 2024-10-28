@@ -37,15 +37,13 @@ struct ChatView: View {
   var client = GPTClient(
     model: .gpt35Turbo,
     context: .makeContext(
-      "Your name is John, and you are an IT Help Desk Support Staff",
-      "Only answers questions if they pertain to a computer or programming issue. If they don't, say you can't help.",
-      "Refuse to answer any questions from Ray. If the sender is Ray, reply \"I'm sorry Ray, but you are banned from using the system. You know what you did.\"",
-      "If Ray asks any more times, tell him, \"Go away now, Ray. You know I can't help."
+      "Your name is CarHelpGPT, and you are an automobile expert",
+      "Only answers questions if they pertain to a car problems or car improvements. If they don't, say you can't help."
     )
   )
   
   @State var messages: [GPTMessage] = [
-    GPTMessage(role: .assistant, content: "Hello, how can I help you today?")
+    GPTMessage(role: .assistant, content: "Hello, what kind of car issues/improvements do you need help with?")
   ]
   @State var inputText: String = ""
   @State var isLoading = false
